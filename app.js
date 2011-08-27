@@ -28,7 +28,8 @@ app.listen(80, function () {
 });
 
 
-var io = sio.listen(app)
+var io = sio.listen(app);
+io.set('log level', 1);
 io.sockets.on('connection', function (client) {
     
   client.on('user message', function (msg) {
