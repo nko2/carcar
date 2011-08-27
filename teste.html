@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+</head>
+<body>
+<script>
+
+    var socket = io.connect();
+    socket.on('podcast', function(from, msg) {
+        console.log("from", from, "msg", msg)
+    });
+    
+    socket.emit('user message', "teste");
+</script>
+</body>
+</html>

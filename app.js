@@ -29,11 +29,10 @@ app.listen(80, function () {
 
 
 var io = sio.listen(app)
-io.sockets.on('connection', function (socket) {
+io.sockets.on('connection', function (client) {
     
-  socket.on('user message', function (msg) {
-    socket.broadcast.emit('podcast', "MIlfont", msg);
+  client.on('user message', function (msg) {
+    client.broadcast.emit('podcast', "MIlfont", msg);
   });
-  
-});
 
+});
