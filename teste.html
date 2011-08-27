@@ -6,11 +6,18 @@
 
 </head>
 <body>
+    
+    <audio id="radio"></audio>
+
 <script>
+    var radio = document.getElementById("radio");
+    radio.mozSetup(2, 44100);
 
     var socket = io.connect();
-    socket.on('podcast', function(from, msg) {
-        console.log("from", from, "msg", msg)
+    socket.on('podcast', function(from, pacotes) {
+        //console.log("from", from, "msg", pacotes)
+        var samples = new Float32Array(pacotes);
+        radio.mozWriteAudio(samples);
     });
     
     socket.emit('user message', "teste");
