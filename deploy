@@ -5,7 +5,7 @@ CONFIG=./deploy.conf
 LOG=/tmp/deploy.log
 TEST=1
 REF=
-ENV=
+ENV=production
 
 #
 # Output usage information.
