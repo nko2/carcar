@@ -1,7 +1,7 @@
 var express = require('express');
 var nko = require('nko')('hfu9xf2WkLaqCx+T');
 var sio = require('socket.io');
-var fs      = require('fs');
+var fs  = require('fs');
 
 var app     = express.createServer();
 
