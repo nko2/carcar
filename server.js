@@ -1,5 +1,5 @@
 var http = require('http') 
-, nko = require('nko')('yourteamsecret');
+, nko = require('nko')('hfu9xf2WkLaqCx+T');
 
 var app = http.createServer(function (req, res) { 
 res.writeHead(200, { 'Content-Type': 'text/html' }); 
