@@ -66,7 +66,7 @@ function Microphone(options,callback){
     var objectHTML = '<object id="' + this.id + '" type="application/x-shockwave-flash" data="' 
     + defaults.swfPath + '" width="215" height="138"><param name="movie" value="' 
     + defaults.swfPath + '" /><param name="FlashVars" value="debugging=' 
-    + defaults.debugging + '&amp;rate='+defaults.sampleRate+'&amp;id=' 
+    + defaults.debugging + '&amp;rate='+8+'&amp;id=' 
     + this.id + '&amp;mode=' + defaults.mode + '" /></object>';
 
     Mic.push(this);

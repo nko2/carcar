@@ -22,8 +22,9 @@
         debugging  : true},
         
         function(){//this function is called when user allow us to access microphone.
-        //mic.sampleRate(44000);
-        mic.sampleRate = 8000;
+        
+        mic.swf.rate = 8;
+        //mic.sampleRate = 8000;
         //sample handler
         mic.onSamplesAvailable = function(data,channelCount){
             //console.log(data);
