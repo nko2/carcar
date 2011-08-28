@@ -17,9 +17,26 @@ app.use(express.methodOverride());
 app.use(express.bodyParser());
 app.use(app.router);
 
+var users = {
+    milfont: {
+        podcasts: []
+    }
+};
+
+app.get('/:user', function(req, res, next){
+	console.log("params >>", req.params);
+	if(req.params.user && users[req.params.user]) {
+		res.render("listen", {user:req.params.user});
+	} else {
+		next();
+	}
+});
+
 app.get('/', function(req, res, next){
 	res.render("index");
 });
+
+
 
 app.get('/restart', function(req, res, next){
   res.redirect("/");
@@ -42,19 +59,14 @@ app.listen(80, function () {
   console.log('   app listening on http://' + addr.address + ':' + addr.port);
 });
 
-var users = {
-	milfont: {
-		podcasts: []
-	}
-};
-
 var io = sio.listen(app);
 io.set('log level', 1);
 
 io.sockets.on('connection', function (client) {
 
   client.on('user message', function (user, file, msg) {
-    client.broadcast.emit('podcast', "milfont", msg);
+    //client.broadcast.emit('podcast', "milfont", msg);
+  	client.broadcast.emit(user, "milfont", msg);
     var podcast = users[user].podcasts.filter(function(podcast){
         return podcast.file === file;
     }).first();

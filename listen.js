@@ -181,11 +181,17 @@
     };
 
 $( function() {
-    
     var player = new MozPlayer;
     var socket = io.connect();
+    if(user !== "") {
+        socket.on(user, function(from, samples) {
+            player.play(new RadioStreamGenerator(samples));
+        });
+    }
+    /*
     socket.on('podcast', function(from, samples) {
         player.play(new RadioStreamGenerator(samples));
     });
+    */
 
 });
