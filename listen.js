@@ -1,7 +1,7 @@
    var IsMacChrome = navigator.userAgent.indexOf('Mac') != -1 &&
         navigator.userAgent.indexOf('Chrome') != -1;
     
-    var samplerate = 48000, channel = 1, stream_length = 4096;
+    var samplerate = 44100, channel = 1, stream_length = 4096;
 
     var sinwave = function(frequency) {
         this.phase = 0.0;
