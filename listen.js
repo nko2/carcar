@@ -177,7 +177,6 @@
     };
 
     RadioStreamGenerator.prototype.next = function() {
-    	console.log(this.stream.length);
         return this.stream;
     };
 
@@ -186,7 +185,6 @@ $( function() {
     var player = new MozPlayer;
     var socket = io.connect();
     socket.on('podcast', function(from, samples) {
-    	console.log(player);
         player.play(new RadioStreamGenerator(samples));
     });
 
