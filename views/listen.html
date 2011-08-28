@@ -9,9 +9,3 @@
     <div id="profile" style="padding: 50px; text-align: center">
       
     </div>
-
-    <script>
-      $.getJSON('http://api.twitter.com/1/users/show.json?screen_name=henriquegogo&callback=?', function(json) {
-        $("#profile").append(json.url);
-      });
-    </script>

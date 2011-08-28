@@ -37,8 +37,12 @@
                 $("#signout").bind("click", function () { twttr.anywhere.signOut(); });
                 user = T.currentUser;
 
-                $("#mic").css("cursor", "pointer").click(function() { location.href = "/talk"; });
-                $("#listen").css("cursor", "pointer").click(function() { location.href = "/"+user.screenName; });
+                $("#mic").css("cursor", "pointer").click(function() { 
+                    location.href = "/talk"; 
+                });
+                $("#listen").css("cursor", "pointer").click(function() { 
+                    location.href = "/"+user.screenName; 
+                });
               }
               else {
                 T("#login-logout").connectButton();
