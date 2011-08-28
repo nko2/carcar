@@ -14,8 +14,15 @@
         console.log("from", from, "msg", msg)
     });
     
-    var mic = new Microphone(function(){//this function is called when user allow us to access microphone.
+    var mic = new Microphone(  { 
+        mode       : 2, //Available modes: Recording -> 1, Streaming -> 2
+        sampleRate : 44100,
+        gain       : 90,
+        swfPath    : 'microphone.swf',
+        debugging  : true},
         
+        function(){//this function is called when user allow us to access microphone.
+        //mic.sampleRate = 44100;
         //sample handler
         mic.onSamplesAvailable = function(data,channelCount){
             //console.log(data);
@@ -23,7 +30,7 @@
         };
         
         //set sample rate
-        mic.sampleRate = 44100;
+        //mic.sampleRate = 44100;
         //get list of microphones available
         console.log(mic.getMicrophoneList());
         //get sample rate

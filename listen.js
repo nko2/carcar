@@ -40,7 +40,7 @@
     if (typeof new Audio().mozSetup === 'function') {
         MozPlayer = function() {
             this.audio = new Audio();
-            this.audio.mozSetup(channel, samplerate);
+            this.audio.mozSetup(2, 44100);
             this.timerId = null;
             this.isPlaying = false;
         };
