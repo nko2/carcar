@@ -31,7 +31,7 @@
           <script type="text/javascript">
             var user;
             twttr.anywhere(function (T) {
-                if (T.isConnected()) {
+              if (T.isConnected()) {
                 T("#login-logout").connectButton();
                 $("#login-logout").after('<br><a href="javascript:" id="signout" type="button">Sign out of Twitter</a>');
                 $("#signout").bind("click", function () { twttr.anywhere.signOut(); });
@@ -40,6 +40,13 @@
               else {
                 T("#login-logout").connectButton();
               }
+              T.bind("authComplete", function (e, user) {
+                location.reload();
+              });
+
+              T.bind("signOut", function (e) {
+                location.reload();
+              });
             });
           </script>
         </div>
