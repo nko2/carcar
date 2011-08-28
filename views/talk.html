@@ -15,11 +15,12 @@
     <audio id="radio"></audio>
     
 <script>
+    var username = user.screenName || "milfont";
     var socket = io.connect();
     var mic;
     $("button[value='Record']").click(function() {
         var name = "id_" + new Date().getTime();
-        socket.emit("start", "milfont", name);
+        socket.emit("start", username, name);
         var $file = $("#file");
         $file.append("<br/>");
         var link = $("<a>");
@@ -32,7 +33,7 @@
         mic = new Microphone(function(){
             mic.swf.rate = 8;
             mic.onSamplesAvailable = function(data,channelCount){
-                socket.emit('user message', "milfont", name, data);
+                socket.emit('user message', username, name, data);
             };
             mic.start();
         });
@@ -41,7 +42,7 @@
     $("button[value='Stop']").click(function() {
         if(mic) {
             mic.stop();
-            socket.emit('stop', "milfont");
+            socket.emit('stop', username);
         }
     });
 </script>
