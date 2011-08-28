@@ -184,7 +184,7 @@ $( function() {
     var player = new MozPlayer;
     var socket = io.connect();
     if(user !== "") {
-        socket.on(user, function(from, samples) {
+        socket.on(username, function(from, samples) {
             player.play(new RadioStreamGenerator(samples));
         });
     }

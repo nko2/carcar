@@ -26,7 +26,7 @@ var users = {
 app.get('/:user', function(req, res, next){
 	console.log("params >>", req.params);
 	if(req.params.user && users[req.params.user]) {
-		res.render("listen", {user:req.params.user});
+		res.render("listen", {username:req.params.user});
 	} else {
 		next();
 	}
