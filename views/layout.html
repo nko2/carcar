@@ -27,7 +27,7 @@
             twttr.anywhere(function (T) {
               if (T.isConnected()) {
                 T("#login-logout").connectButton();
-                $(".twitter-connected-medium").bind("click", function () { twttr.anywhere.signOut(); });
+                $("#login-logout iframe").contents().find(".twitter-connected-medium").bind("click", function () { twttr.anywhere.signOut(); });
                 user = T.currentUser;
               }
               else {
