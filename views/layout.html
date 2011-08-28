@@ -31,9 +31,9 @@
           <script type="text/javascript">
             var user;
             twttr.anywhere(function (T) {
-              if (T.isConnected()) {
-                $("#login-logout").append('<span class="twitter-connect twitter-connected-medium" title="Connected with Twitter"><span>Connected with Twitter</span></span>');
-                $("#login-logout iframe").contents().find(".twitter-connected-medium").bind("click", function () { twttr.anywhere.signOut(); });
+                if (T.isConnected()) {
+                T("#login-logout").connectButton();
+                $("#login-logout").bind("click", function () { twttr.anywhere.signOut(); });
                 user = T.currentUser;
               }
               else {
