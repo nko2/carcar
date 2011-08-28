@@ -1,0 +1,66 @@
+html {
+  height: 100%;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  background: #F3F3F3;
+  box-shadow: inset 0 0 255px #AAA;
+}
+
+body {
+  margin: 0;
+}
+.container {
+  margin: 0 auto;
+  width: 960px;
+}
+
+/* GRIGS */
+/* body { */
+/*   display: table;  */
+/* } */
+/* .sidebar, */
+/* .content, */
+/* .column { */
+/*   display: table-cell; */
+/* } */
+/* .content { */
+/*   display: table; */
+/*   width: 100%; */
+/* } */
+/* /GRIGS */
+
+#top {
+  width: 100%;
+  padding: 20px 0;
+  color: #FFF;
+  text-shadow: 2px 2px 1px #444;
+  background: #049;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#004499', endColorstr='#0099DD');
+  background: -webkit-gradient(linear, left top, left bottom, from(#004499), to(#0099DD));
+  background: -moz-linear-gradient(top,  #004499,  #0099DD);
+}
+#top h1 {
+  margin: 0;
+  font-size: 45px;
+  text-align: center;
+}
+#top h2 {
+  font-size: 25px;
+  font-weight: normal;
+  text-align: center;
+}
+
+#steps {
+  background: #DDD;
+}
+#steps .columns {
+  display: table;
+  width: 100%;
+}
+#steps .column {
+  display: table-cell;
+  padding: 20px;
+  font-size: 13px;
+  text-align: center;
+  border-left: 1px solid #EEE;
+  border-right: 1px solid #CCC;
+}
