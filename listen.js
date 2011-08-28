@@ -48,12 +48,12 @@
         MozPlayer.prototype.play = function(gen) {
             var self = this;
 
-            if (this.timerId === null) {
-                this.timerId = setInterval(function() {
+            //if (this.timerId === null) {
+            //    this.timerId = setInterval(function() {
                     var s = new Float32Array(gen.next());
                     self.audio.mozWriteAudio(s);
-                }, stream_length / samplerate * 1000);
-            }
+           //     }, stream_length / samplerate * 1000);
+           // }
             this.isPlaying = true;
         };
 
