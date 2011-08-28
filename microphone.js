@@ -30,7 +30,7 @@ function Microphone(options,callback){
         mode       : 2, //Available modes: Recording -> 1, Streaming -> 2
         sampleRate : 44100,
         gain       : 50,
-        swfPath    : '/public/microphone.swf',
+        swfPath    : 'microphone.swf',
         debugging  : true
     }
     
