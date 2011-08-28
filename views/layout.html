@@ -25,7 +25,6 @@
           <script type="text/javascript">
             twttr.anywhere(function (T) {
               if (T.isConnected()) {
-                T("#login-logout").connectButton();
                 $("#login-logout").append('<a href="javascript:" id="signout" type="button">Sign out of Twitter</a>');
                 $("#signout").bind("click", function () { twttr.anywhere.signOut(); });
                 user = T.currentUser;
