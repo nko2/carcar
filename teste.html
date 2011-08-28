@@ -6,38 +6,7 @@
 
 </head>
 <body>
-    
     <audio id="radio"></audio>
-
     <script src="listen.js"></script>
-
-<!--
-<script>
-    if (! window.AudioContext) {
-        window.AudioContext = window.webkitAudioContext;
-    }
-    var context;
-    
-
-    var play = function(samples) {
-        /* Vou usar isso para implementar
-        https://gist.github.com/1131616
-         */
-    }
-
-    //var radio = document.getElementById("radio");
-    //radio.mozSetup(2, 44100);
-
-    var socket = io.connect();
-    socket.on('podcast', function(from, pacotes) {
-        //console.log("from", from, "msg", pacotes)
-        //var samples = new Float32Array(pacotes);
-        //radio.mozWriteAudio(samples);
-        play(pacotes);
-    });
-    
-    socket.emit('user message', "teste");
-</script>
--->
 </body>
 </html>
