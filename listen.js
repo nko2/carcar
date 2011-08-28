@@ -1,7 +1,7 @@
    var IsMacChrome = navigator.userAgent.indexOf('Mac') != -1 &&
         navigator.userAgent.indexOf('Chrome') != -1;
     
-    var samplerate = 44100, channel = 1, stream_length = 4096;
+    var samplerate = 16000, channel = 1, stream_length = 4096;
 
     var sinwave = function(frequency) {
         this.phase = 0.0;
@@ -40,7 +40,7 @@
     if (typeof new Audio().mozSetup === 'function') {
         MozPlayer = function() {
             this.audio = new Audio();
-            this.audio.mozSetup(2, 44100);
+            this.audio.mozSetup(channel, samplerate);
             this.timerId = null;
             this.isPlaying = false;
         };
