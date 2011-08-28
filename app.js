@@ -74,12 +74,13 @@ io.sockets.on('connection', function (client) {
   });
   
   client.on('start', function(user, name) {
-  	var user = users[user];
-  	if(typeof user === "undefined") {
+  	var userTemp = users[user];
+  	if(typeof userTemp === "undefined") {
   		users[user] = {
   			podcasts: []
   		}
   	}
+  	console.log(users, user);
   	var podcast = new Podcast(user, name);
   	podcast.record();
   	users[user].podcasts.add(podcast);
