@@ -1,11 +1,8 @@
-<!doctype html>
-<html>
-<head>
+
     <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="microphone.js"></script>
-</head>
-<body>
+    <script src="/public/microphone.js"></script>
+
     <button value="Record">Record</button>
     <button value="Stop">Stop</button>
     
@@ -20,7 +17,7 @@
     var mic;
     $("button[value='Record']").click(function() {
         var name = "id_" + new Date().getTime();
-        socket.emit("start", name);
+        socket.emit("start", "milfont", name);
         var $file = $("#file");
         $file.append("<br/>");
         var link = $("<a>");
@@ -33,7 +30,7 @@
         mic = new Microphone(function(){
             mic.swf.rate = 8;
             mic.onSamplesAvailable = function(data,channelCount){
-                socket.emit('user message', data);
+                socket.emit('user message', "milfont", name, data);
             };
             mic.start();
         });
@@ -42,9 +39,7 @@
     $("button[value='Stop']").click(function() {
         if(mic) {
             mic.stop();
-            socket.emit('stop', "stop");
+            socket.emit('stop', "milfont");
         }
     });
 </script>
-</body>
-</html>
