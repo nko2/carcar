@@ -21,10 +21,18 @@
       <div class="columns">
         <div class="column">
           Login with your twitter account<br><br><br>
-          <span id="login"></span>
+          <span id="login-logout"></span>
           <script type="text/javascript">
             twttr.anywhere(function (T) {
-              T("#login").connectButton();
+              if (T.isConnected()) {
+                T("#login-logout").connectButton();
+                $("#login-logout").append('<a href="javascript:" id="signout" type="button">Sign out of Twitter</a>');
+                $("#signout").bind("click", function () { twttr.anywhere.signOut(); });
+                user = T.currentUser;
+              }
+              else {
+                T("#login-logout").connectButton();
+              }
             });
           </script>
         </div>
