@@ -55,6 +55,11 @@ io.sockets.on('connection', function (client) {
   client.on('stop', function() {
     console.log("stop");
     stream.end();
-  });  
+  });
+  
+  client.on('listen', function(){
+    console.log("listen");
+    
+  })
 
 });

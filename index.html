@@ -12,6 +12,9 @@
     <div id="file">
         
     </div>
+    
+    <audio id="radio"></audio>
+    
 <script>
     var socket = io.connect();
     var mic;
@@ -23,7 +26,7 @@
         var link = $("<a>");
         link.attr("src", "#"+name)
             .click(function() {
-                
+                socket.emit('listen', name);
             })
             .html(name)
             .appendTo($file);
