@@ -23,12 +23,17 @@
         <div class="column">
           Login with your twitter account<br><br><br>
           <span id="login-logout"></span>
+          <style>
+            .twitter-connected-medium {
+              cursor: pointer;
+            }
+          </style>
           <script type="text/javascript">
             var user;
             twttr.anywhere(function (T) {
               if (T.isConnected()) {
                 T("#login-logout").connectButton();
-                setTimeout('$("#login-logout iframe").contents().find(".twitter-connected-medium").css("cursor", "pointer").bind("click", function () { twttr.anywhere.signOut(); });', 5000);
+                $("#login-logout iframe").contents().find(".twitter-connected-medium").bind("click", function () { twttr.anywhere.signOut(); });
                 user = T.currentUser;
               }
               else {
