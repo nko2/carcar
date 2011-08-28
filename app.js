@@ -6,6 +6,7 @@ var fs  = require('fs');
 var app     = express.createServer();
 
 app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/views');
 app.register('.html', require('ejs'));
 app.set('view engine', 'html');
 
@@ -14,7 +15,7 @@ app.use(express.bodyParser());
 app.use(app.router);
 
 app.get('/', function(req, res, next){
-    res.write("teste");
+    res.render("index");
     res.end();
 });
 
@@ -42,7 +43,6 @@ io.sockets.on('connection', function (client) {
             console.log(stream, e);
         }
     }
-    
   });
   
   client.on('start', function(name) {
