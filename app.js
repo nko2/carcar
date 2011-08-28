@@ -21,6 +21,9 @@ app.get('/', function(req, res, next){
 	res.render("index");
 });
 
+app.get('/restart', function(req, res, next){
+  res.redirect("/");
+});
 
 app.get('/talk', function(req, res, next){
     res.render("talk");
