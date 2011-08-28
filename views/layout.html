@@ -36,6 +36,9 @@
                 $("#login-logout").after('<br><a href="javascript:" id="signout" type="button">Sign out of Twitter</a>');
                 $("#signout").bind("click", function () { twttr.anywhere.signOut(); });
                 user = T.currentUser;
+
+                $("#mic").css("cursor", "pointer").click(function() { location.href = "/talk"; });
+                $("#listen").css("cursor", "pointer").click(function() { location.href = "/"+user.screenName; });
               }
               else {
                 T("#login-logout").connectButton();
